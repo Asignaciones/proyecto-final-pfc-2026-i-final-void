@@ -94,7 +94,7 @@ donde $a(k)$ es el indice del aula asignada al curso $k$ y:
 $$
 d(k) =
 \begin{cases}
-\operatorname{cap}(a(k)) - \operatorname{est}(c_k), & \text{si el curso } k \text{ esta asignado y la capacidad alcanza} \\
+\operator{cap}(a(k)) - \operator{est}(c_k), & \text{si el curso } k \text{ esta asignado y la capacidad alcanza} \\
 0, & \text{en otro caso}
 \end{cases}
 $$
