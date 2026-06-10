@@ -6,7 +6,7 @@
 |----------------------------|----------|---------------------------------------|
 | Kevin Alejandro Marulanda  | 2380697  | Kevin.marulanda@correounivalle.edu.co |
 
-## 4.1.1. Informe de procesos
+## Informe de procesos
 
 Este apartado documenta el comportamiento de las funciones recursivas de la
 solucion secuencial. El requisito del enunciado es mostrar ejemplos pequenos,
