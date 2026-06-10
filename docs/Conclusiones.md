@@ -1,8 +1,11 @@
 # Conclusiones
 
-**Integrantes:** [completar]
+## Integrantes del grupo
 
----
+| Nombre completo            | Código   | Correo electrónico                       |
+|----------------------------|----------|------------------------------------------|
+| Kevin Alejandro Marulanda  | 2380697  | Kevin.marulanda@correounivalle.edu.co    |
+
 
 ## Conclusiones del proyecto
 
