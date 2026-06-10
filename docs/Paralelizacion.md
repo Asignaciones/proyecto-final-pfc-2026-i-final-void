@@ -68,10 +68,10 @@ Las siguientes combinaciones son razonables para el análisis comparativo:
 
 | Cursos $n$ | Aulas $m$ | Secuencial (ms) | Paralela (ms) | Aceleración (%) |
 |:----------:|:---------:|:--------------:|:-------------:|:---------------:|
-| 4          | 3         |                |               |                 |
-| 6          | 4         |                |               |                 |
-| 7          | 5         |                |               |                 |
-| 8          | 5         |                |               |                 |
+| 4          | 3         | 1.878          | 0.687         | 63.42           |
+| 6          | 4         | 17.453         | 6.113         | 64.97           |
+| 7          | 5         | 78.442         | 42.180        | 46.23           |
+| 8          | 5         | 433.994        | 255.349       | 41.16           |
 
 La aceleración puede calcularse como:
 
