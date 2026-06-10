@@ -33,6 +33,44 @@ class AsignacionAulasParTest extends AnyFunSuite {
   test("generarAsignacionesPar: 2 cursos y 2 aulas produce 4 asignaciones") {
     assert(generarAsignacionesPar(2, 2).length == 4)
   }
+  test("n=0") {
+
+    assert(
+      generarAsignacionesPar(0,3) ==
+        generarAsignaciones(0,3)
+    )
+  }
+
+  test("n=1 m=2") {
+
+    assert(
+      generarAsignacionesPar(1,2) ==
+        generarAsignaciones(1,2)
+    )
+  }
+
+  test("n=2 m=2") {
+
+    assert(
+      generarAsignacionesPar(2,2) ==
+        generarAsignaciones(2,2)
+    )
+  }
+
+  test("Cantidad correcta") {
+
+    assert(
+      generarAsignacionesPar(3,2).length == 8
+    )
+  }
+
+  test("Mismas asignaciones que la secuencial") {
+
+    assert(
+      generarAsignacionesPar(4,3).toSet ==
+        generarAsignaciones(4,3).toSet
+    )
+  }
 
   test("asignacionOptimaPar: el costo de la optima no supera el de [0,1,0] (37)") {
     val (_, costo) = asignacionOptimaPar(c1, a1, d1, w)

@@ -548,4 +548,155 @@ class AsignacionAulasTest extends AnyFunSuite {
     val (_, costo) = asignacionOptima(c1, a1, d1, w)
     assert(costo <= 37)
   }
+
+  test("Una unica asignacion posible") {
+
+    val cursos =
+      Vector(("C1",0,4,20))
+
+    val aulas =
+      Vector(("A1",30))
+
+    val d =
+      Vector(Vector(0))
+
+    val pesos =
+      (1000,100,1,2)
+
+    val resultado =
+      asignacionOptima(
+        cursos,
+        aulas,
+        d,
+        pesos
+      )
+
+    assert(
+      resultado ==
+        (Vector(0),10)
+    )
+  }
+
+  test("Prefiere evitar choques") {
+
+    val cursos = Vector(
+      ("C1",0,4,20),
+      ("C2",2,6,20)
+    )
+
+    val aulas = Vector(
+      ("A1",30),
+      ("A2",30)
+    )
+
+    val d = Vector(
+      Vector(0,1),
+      Vector(1,0)
+    )
+
+    val pesos = (1000,100,1,2)
+
+    val (asig,costo) =
+      asignacionOptima(
+        cursos,
+        aulas,
+        d,
+        pesos
+      )
+
+    assert(costo < 1000)
+  }
+  test("Dos cursos una aula") {
+
+    val cursos = Vector(
+      ("C1",0,4,20),
+      ("C2",4,8,20)
+    )
+
+    val aulas = Vector(
+      ("A1",30)
+    )
+
+    val d = Vector(
+      Vector(0)
+    )
+
+    val pesos = (1000,100,1,2)
+
+    val resultado =
+      asignacionOptima(
+        cursos,
+        aulas,
+        d,
+        pesos
+      )
+
+    assert(
+      resultado._1 == Vector(0,0)
+    )
+  }
+
+  test("Costo consistente") {
+
+    val cursos =
+      Vector(("C1",0,4,20))
+
+    val aulas =
+      Vector(("A1",25))
+
+    val d =
+      Vector(Vector(0))
+
+    val pesos =
+      (1000,100,1,2)
+
+    val (a,costo) =
+      asignacionOptima(
+        cursos,
+        aulas,
+        d,
+        pesos
+      )
+
+    assert(
+      costo ==
+        costoAsignacion(
+          cursos,
+          aulas,
+          d,
+          a,
+          pesos
+        )
+    )
+  }
+
+  test("Encuentra el minimo global") {
+
+    val cursos = Vector(
+      ("C1",0,4,20),
+      ("C2",2,6,20)
+    )
+
+    val aulas = Vector(
+      ("A1",20),
+      ("A2",20)
+    )
+
+    val d = Vector(
+      Vector(0,1),
+      Vector(1,0)
+    )
+
+    val pesos = (1000,100,1,2)
+
+    val (_, costo) =
+      asignacionOptima(
+        cursos,
+        aulas,
+        d,
+        pesos
+      )
+
+    assert(costo == 2)
+  }
 }
