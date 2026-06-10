@@ -38,4 +38,11 @@ class AsignacionAulasParTest extends AnyFunSuite {
     val (_, costo) = asignacionOptimaPar(c1, a1, d1, w)
     assert(costo <= 37)
   }
+
+  test("asignacionOptimaPar: rechaza el caso sin aulas cuando hay cursos") {
+    intercept[IllegalArgumentException] {
+      asignacionOptimaPar(c1, Vector.empty, d1, w)
+    }
+  }
+
 }
